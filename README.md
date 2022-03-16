@@ -1,7 +1,10 @@
-# wit_driver
+# IMU CONTROL
 
-rosrun wit_driver modbus_master_serial
+Launch drivers for all 8 IMUs with faster implementation:
+roslaunch fly_jacket all_imu_launch_fast.launch
 
-roslaunch wit_driver single_imu_launch.launch
+Run pose estimation
+rosrun fly_jacket pose_imu.py 
 
-rosrun wit_driver pose_imu.py
+Run control node
+rosrun fly_jacket control_node.py 
