@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+ <node pkg="rosbag" type="record" name="rosbag_record" output="screen"
+       args="record -o /home/goran/experiments_imu/ /imu0 /imu1 /imu2 /imu3 /imu4 /imu5 /imu6 /imu7 /imu_magnetic0 /imu_magnetic1 /imu_magnetic2 /imu_magnetic3 /imu_magnetic4 /imu_magnetic5 /imu_magnetic6 /imu_magnetic7 /camera/image_raw/compressed /uav/joint_states /uav/odometry"
+       />
+
+</launch>

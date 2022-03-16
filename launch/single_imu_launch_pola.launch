@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!--
+  Launch wit driver
+-->
+<launch>
+  
+  <!-- defined default address and refreshrate -->
+  <arg name="refresh_rate"  default="10"/>
+  <arg name="port1" default="/dev/ttyUSB0"/>
+  <arg name="port2" default="/dev/ttyUSB1"/> 
+  <arg name="baudrate"  default="460800"/> <!--460800-->
+
+<!-- run node -->
+
+  <node name="wit_driver1" pkg="wit_driver" type="wit_driver" output="screen">
+    <param name="address" type="int" value="86" />
+    <param name="refresh_rate" type="int" value="$(arg refresh_rate)" />
+    <param name="modbus_service" type="str" value="modbus_service1" />
+  </node>
+
+  <node name="wit_driver2" pkg="wit_driver" type="wit_driver" output="screen">
+    <param name="address" type="int" value="81" />
+    <param name="refresh_rate" type="int" value="$(arg refresh_rate)" />
+    <param name="modbus_service" type="str" value="modbus_service1" />
+  </node>
+
+  <node name="wit_driver3" pkg="wit_driver" type="wit_driver" output="screen">
+    <param name="address" type="int" value="84" />
+    <param name="refresh_rate" type="int" value="$(arg refresh_rate)" />
+    <param name="modbus_service" type="str" value="modbus_service1" />
+  </node>
+
+  <node name="wit_driver4" pkg="wit_driver" type="wit_driver" output="screen">
+    <param name="address" type="int" value="83" />
+    <param name="refresh_rate" type="int" value="$(arg refresh_rate)" />
+    <param name="modbus_service" type="str" value="modbus_service1" />
+  </node>
+<!--
+   <node name="wit_driver5" pkg="wit_driver" type="wit_driver" output="screen">
+    <param name="address" type="int" value="87" />
+    <param name="refresh_rate" type="int" value="$(arg refresh_rate)" />
+    <param name="modbus_service" type="str" value="modbus_service2" />
+  </node>
+
+
+  <node name="wit_driver6" pkg="wit_driver" type="wit_driver" output="screen">
+    <param name="address" type="int" value="80" />
+    <param name="refresh_rate" type="int" value="$(arg refresh_rate)" />
+    <param name="modbus_service" type="str" value="modbus_service2" />
+  </node>
+
+  <node name="wit_driver7" pkg="wit_driver" type="wit_driver" output="screen">
+    <param name="address" type="int" value="82" />
+    <param name="refresh_rate" type="int" value="$(arg refresh_rate)" />
+    <param name="modbus_service" type="str" value="modbus_service2" />
+  </node>
+
+  <node name="wit_driver8" pkg="wit_driver" type="wit_driver" output="screen">
+    <param name="address" type="int" value="85" />
+    <param name="refresh_rate" type="int" value="$(arg refresh_rate)" />
+    <param name="modbus_service" type="str" value="modbus_service2" />
+  </node>
+-->
+  <node name="modbus_master_serial1" pkg="wit_driver" type="modbus_master_serial" output="screen">
+    <param name="port" type="str" value="$(arg port1)" />
+    <param name="modbus_service" type="str" value="modbus_service1" />
+    <param name="baudrate" type="int" value="$(arg baudrate)" />
+  </node>
+<!--
+  <node name="modbus_master_serial2" pkg="wit_driver" type="modbus_master_serial" output="screen">
+    <param name="port" type="str" value="$(arg port2)" />
+    <param name="modbus_service" type="str" value="modbus_service2" />
+    <param name="baudrate" type="int" value="$(arg baudrate)" />
+  </node>
+-->
+</launch>
